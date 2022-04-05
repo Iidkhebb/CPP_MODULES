@@ -1,8 +1,8 @@
-NAME = setup
-CFLAGS = -Wall -Wextra -Werror
+NAME = phone
+CFLAGS = -std=c++98 -Wall -Wextra -Werror
 CC = c++
 
-SRCS = setup.cpp
+SRCS = Contact.cpp Phonebook.cpp main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
