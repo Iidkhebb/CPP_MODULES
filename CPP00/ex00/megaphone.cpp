@@ -1,13 +1,13 @@
-#include "megaphone.hpp"
+#include "String.hpp"
 
 int main(int ac, char *av[])
 {
     if (ac != 1)
     {
-    for (size_t i = 1; i < ac; i++)
+        for (int i = 1; i < ac; i++)
         {
-            String str(av[i]);
-            print(str.upper());
+            String s(av[i]);
+            print(s.upper());
         }
         print("\n");
     }
