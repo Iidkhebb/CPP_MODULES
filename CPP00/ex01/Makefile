@@ -1,5 +1,5 @@
 NAME = phone
-FLAGS = -std=c++98 -Wall -Wextra -Werror
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 CC = c++
 
 SRCS = Contact.cpp PhoneBook.cpp main.cpp
