@@ -20,28 +20,3 @@ public:
     void add();
     void search();
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// template <typename T, typename T2>
-// bool operator&(T obj1, T2 obj2) {
-//     for (auto it =  obj2.begin(); it != obj2.end(); it++)
-//     {
-//         if (*it == obj1)
-//             return true;
-//     }
-//     return false;
-// }
-// #define in &
