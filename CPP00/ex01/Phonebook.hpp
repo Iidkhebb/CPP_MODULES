@@ -18,7 +18,7 @@ private:
 public:
     PhoneBook();
     void add();
-    void search(int i);
+    void search();
 };
 
 

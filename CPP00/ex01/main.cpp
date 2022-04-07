@@ -5,21 +5,17 @@ int main(void)
 {
     PhoneBook phone = PhoneBook();
     str inp;
-    print("\t ---- WELCOME TO PHONEBOOK ---- \n\n\n");
-    print("SUPPORTED COMMANDS:\n\n");
-    print("* ADD\n* SEARCH\n* EXIT\n");
+    print("\n\n\t \x1b[32m ---- WELCOME TO PHONEBOOK ---- \033[0m \n\n");
+    print("\x1b[36m SUPPORTED COMMANDS:\n");
+    print("* ADD\n* SEARCH\n* EXIT\n \033[0m \n\n");
     while (true)
     {
-        print("PhoneBook$ ");
+        print("\x1b[32m➜ PhoneBook :\033[0m");
         input(inp);
         if (inp is "ADD")
             phone.add();
         else if (inp is "SEARCH")
-        {
-            print("ENTER THE CONTACT INDEX > ");
-            input(inp);
-            phone.search(stoi(inp));
-        }
+            phone.search();
         else if (inp is "EXIT")
             exit(0);
         else

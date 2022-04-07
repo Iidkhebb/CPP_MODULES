@@ -22,4 +22,6 @@ public:
     str get_first_name();
     str get_last_name();
     str get_nickaname();
+    str get_phone();
+    str get_secret();
 };

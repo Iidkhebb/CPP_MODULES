@@ -35,3 +35,13 @@ str Contact::get_nickaname()
 {
     return this->NickName;
 }
+
+str Contact::get_phone()
+{
+    return this->PhoneNumber;
+}
+
+str Contact::get_secret()
+{
+    return this->DarkestSecret;
+}
