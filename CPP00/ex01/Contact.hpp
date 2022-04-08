@@ -1,11 +1,9 @@
 #pragma once
 #include <iostream>
 #include <string>
-#define print(s) std::cout << s
-#define input(x) getline(std::cin, x)
-#define str std::string
 #include <map>
 #include <vector>
+#include "BetterSyntax.hpp"
 
 class Contact
 {

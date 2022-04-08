@@ -2,8 +2,10 @@
 #include "PhoneBook.hpp"
 #include <map>
 #include <vector>
+#include "BetterSyntax.hpp"
 
-Contact::Contact()
+
+Contact Acess Contact()
 {
     this->FirstName = "";
     this->LastName = "";
@@ -12,7 +14,7 @@ Contact::Contact()
     this->DarkestSecret = "";
 }
 
-Contact::Contact(str FirstName,str LastName,str NickName,str PhoneNumber,str DarkestSecret)
+Contact Acess Contact(str FirstName,str LastName,str NickName,str PhoneNumber,str DarkestSecret)
 {
     this->FirstName = FirstName;
     this->LastName = LastName;
@@ -21,27 +23,27 @@ Contact::Contact(str FirstName,str LastName,str NickName,str PhoneNumber,str Dar
     this->DarkestSecret = DarkestSecret;
 }
 
-str Contact::get_first_name()
+str Contact Acess get_first_name()
 {
     return this->FirstName;
 }
 
-str Contact::get_last_name()
+str Contact Acess get_last_name()
 {
     return this->LastName;
 }
 
-str Contact::get_nickaname()
+str Contact Acess get_nickaname()
 {
     return this->NickName;
 }
 
-str Contact::get_phone()
+str Contact Acess get_phone()
 {
     return this->PhoneNumber;
 }
 
-str Contact::get_secret()
+str Contact Acess get_secret()
 {
     return this->DarkestSecret;
 }

@@ -1,5 +1,6 @@
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
+#include "BetterSyntax.hpp"
 
 int main(void)
 {
