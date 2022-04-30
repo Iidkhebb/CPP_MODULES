@@ -2,6 +2,7 @@
 #include "PhoneBook.hpp"
 #include <iomanip>
 #include <string>
+#include <cstdlib>
 
 PhoneBook Acess PhoneBook()
 {
@@ -16,16 +17,11 @@ void PhoneBook Acess add()
     str Phone_Number;
     str Darkest_Secret;
 
-    print("ENTER YOUR FIRST NAME >");
-    input(First_Name);
-    print("ENTER YOUR LAST NAME >");
-    input(Last_Name);
-    print("ENTER YOUR Nick Name >");
-    input(Nick_Name);
-    print("ENTER YOUR Phone Number >");
-    input(Phone_Number);
-    print("ENTER YOUR Darkest Secret >");
-    input(Darkest_Secret);
+    First_Name = bs().input("ENTER YOUR FIRST NAME >");
+    Last_Name = bs().input("ENTER YOUR LAST NAME >");
+    Nick_Name = bs().input("ENTER YOUR Nick Name >");
+    Phone_Number = bs().input("ENTER YOUR Phone Number >");
+    Darkest_Secret = bs().input("ENTER YOUR Darkest Secret >");
     Contact Contact(First_Name, Last_Name, Nick_Name, Phone_Number, Darkest_Secret);
     this->contacts[contacts_count++ % 8] = Contact;
 }
@@ -48,10 +44,8 @@ void PhoneBook Acess search()
         cout << std::setw(10) << (nick.length() > 10 ? nick.substr(0,9) + "." : nick) << "|" << std::endl;
     }
     
-    print("\x1b[32m➜ Enter the index > \033[0m");
-    str inp;
-    input(inp);
-    int i = stoi(inp);
+    str inp = bs().input("\x1b[32m➜ Enter the index > \033[0m");
+    int i = atoi(inp.c_str());
     if(this->contacts_count > i and i > -1)
     {
         Contact Contact = this->contacts[i];

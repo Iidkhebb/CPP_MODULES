@@ -2,7 +2,7 @@
 #include "PhoneBook.hpp"
 #include <map>
 #include <vector>
-#include "BetterSyntax.hpp"
+#include "./bs/BetterSyntax.hpp"
 
 
 Contact Acess Contact()

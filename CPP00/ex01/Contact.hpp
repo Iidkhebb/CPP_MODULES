@@ -3,7 +3,7 @@
 #include <string>
 #include <map>
 #include <vector>
-#include "BetterSyntax.hpp"
+#include "./bs/BetterSyntax.hpp"
 
 class Contact
 {

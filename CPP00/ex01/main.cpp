@@ -1,6 +1,6 @@
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
-#include "BetterSyntax.hpp"
+#include "./bs/BetterSyntax.hpp"
 
 int main(void)
 {
@@ -11,8 +11,8 @@ int main(void)
     print("* ADD\n* SEARCH\n* EXIT\n \033[0m \n\n");
     while (true)
     {
-        print("\x1b[32m➜ PhoneBook :\033[0m");
-        input(inp);
+        // print();
+        inp = bs().input("\x1b[32m➜ PhoneBook :\033[0m");
         if (inp is "ADD")
             phone.add();
         else if (inp is "SEARCH")

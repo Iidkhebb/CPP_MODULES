@@ -2,7 +2,7 @@ NAME = phone
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 CC = c++
 
-SRCS = Contact.cpp PhoneBook.cpp main.cpp
+SRCS = Contact.cpp PhoneBook.cpp main.cpp bs/BetterSyntax.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
