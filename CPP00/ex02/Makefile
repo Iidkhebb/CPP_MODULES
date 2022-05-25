@@ -1,5 +1,5 @@
-NAME = phone
-CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
+NAME = test
+CPPFLAGS = -std=c++98 
 CC = c++
 
 SRCS = main.cpp Account.cpp

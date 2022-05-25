@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __ACCOUNT_HPP__
+#define __ACCOUNT_HPP__
 
 // ************************************************************************** //
 //                               Account Class                                //
@@ -43,3 +44,5 @@ private:
 	Account( void );
 
 };
+
+#endif
