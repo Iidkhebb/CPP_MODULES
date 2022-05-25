@@ -1,5 +1,5 @@
 NAME = test
-CPPFLAGS = -std=c++98 
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 CC = c++
 
 SRCS = main.cpp Account.cpp

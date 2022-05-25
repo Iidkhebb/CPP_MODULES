@@ -11,7 +11,6 @@ int main(void)
     print("* ADD\n* SEARCH\n* EXIT\n \033[0m \n\n");
     while (true)
     {
-        // print();
         inp = bs().input("\x1b[32m➜ PhoneBook :\033[0m");
         if (inp is "ADD")
             phone.add();
