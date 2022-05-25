@@ -2,7 +2,7 @@ NAME = main
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 CC = c++
 
-SRCS = main.cpp Account.cpp
+SRCS = Main.cpp Account.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

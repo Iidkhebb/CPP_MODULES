@@ -2,7 +2,7 @@ NAME = megaphone
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 CC = c++
 
-SRCS = megaphone.cpp String.cpp
+SRCS = MegaPhone.cpp String.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
