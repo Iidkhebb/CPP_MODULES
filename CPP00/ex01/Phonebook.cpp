@@ -46,6 +46,11 @@ void PhoneBook Acess search()
     
     str inp = bs().input("\x1b[32m➜ Enter the index > \033[0m");
     int i = atoi(inp.c_str());
+    if (not std::cin.good())
+    {
+        print("Invalid input\n");
+        return;
+    }
     if(this->contacts_count > i and i > -1)
     {
         Contact Contact = this->contacts[i];

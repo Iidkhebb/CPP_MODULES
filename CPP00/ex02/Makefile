@@ -1,4 +1,4 @@
-NAME = test
+NAME = main
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 CC = c++
 
