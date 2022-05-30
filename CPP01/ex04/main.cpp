@@ -31,6 +31,9 @@ int main(int ac, char *av[])
 		
 	}
 	else
+	{
+		std::cout << "Error: wrong number of arguments" << std::endl;
 		return (1);
+	}
 	return 0;
 }
