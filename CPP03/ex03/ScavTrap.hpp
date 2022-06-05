@@ -5,7 +5,7 @@
 #include <string>
 #define str std::string
 
-class ScavTrap : public ClapTrap
+class ScavTrap :virtual public ClapTrap
 {
 	public:
 		ScavTrap();

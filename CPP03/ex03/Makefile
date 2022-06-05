@@ -1,8 +1,8 @@
 NAME = main
-CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
+CPPFLAGS = -std=c++98 
 CC = c++
 
-SRCS = main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp
+SRCS = main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp DiamondTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

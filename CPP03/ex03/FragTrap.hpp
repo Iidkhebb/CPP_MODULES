@@ -6,7 +6,7 @@
 #include <string>
 #define str std::string
 
-class FragTrap : public ClapTrap
+class FragTrap :virtual public ClapTrap
 {
     public:
         FragTrap();
