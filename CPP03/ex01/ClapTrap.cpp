@@ -3,7 +3,7 @@
 // --- Canonical Form ---
 ClapTrap::ClapTrap()
 {
-	std::cout << "ClapTrap::ClapTrap()" << std::endl;
+	std::cout << "ClapTrap: Called default constructor." << std::endl;
 	this->name = "";
 	this->hitPoints = 10;
 	this->energyPoints = 10;
@@ -12,7 +12,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(str name)
 {
-	std::cout << "ClapTrap " << name << " is created" << std::endl;
+	std::cout << "ClapTrap Called overloaded constructor." << std::endl;
 	this->name = name;
 	this->hitPoints = 10;
 	this->energyPoints = 10;
