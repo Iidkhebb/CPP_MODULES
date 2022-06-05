@@ -27,6 +27,17 @@ FragTrap::FragTrap(FragTrap const & src)
     *this = src;
 }
 
+FragTrap & FragTrap::operator=(FragTrap const & rhs)
+{
+	this->name = rhs.name;
+	this->hitPoints = rhs.hitPoints;
+	this->energyPoints = rhs.energyPoints;
+	this->attackDamage = rhs.attackDamage;
+	std::cout << "FragTrap : " << this->name << " called operator overloader" << std::endl;
+	return *this;
+}
+
+
 FragTrap::~FragTrap()
 {
     std::cout << "FragTrap: called destructor." << std::endl;
@@ -35,5 +46,17 @@ FragTrap::~FragTrap()
 
 void FragTrap::highFivesGuys(void)
 {
+    if (this->hitPoints > 0 and this->energyPoints > 0)
+    {
+        std::cout << "FragTrap : " << this->name << "shows a high fives." << std::endl;
+    }
+}
 
+void FragTrap::attack(const str& target)
+{
+	if (this->hitPoints > 0 and this->energyPoints > 0)
+	{
+	std::cout << "FragTrap " << this->name << " attacks " << target << " causing " << this->attackDamage << " points of damage!" << std::endl;
+	this->energyPoints--;
+	}
 }

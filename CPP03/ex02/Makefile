@@ -2,7 +2,7 @@ NAME = main
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 CC = c++
 
-SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS = main.cpp ClapTrap.cpp FragTrap.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

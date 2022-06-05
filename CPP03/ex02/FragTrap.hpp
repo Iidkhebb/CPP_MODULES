@@ -1,4 +1,4 @@
-#pragma onnce
+#pragma once
 
 #include "ClapTrap.hpp"
 
@@ -16,4 +16,5 @@ class FragTrap : public ClapTrap
         ~FragTrap();
 
         void highFivesGuys(void);
+        void attack(const str& target);
 };

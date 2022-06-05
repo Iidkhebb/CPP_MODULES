@@ -31,7 +31,7 @@ ClapTrap & ClapTrap::operator=(ClapTrap const & rhs)
 	this->hitPoints = rhs.hitPoints;
 	this->energyPoints = rhs.energyPoints;
 	this->attackDamage = rhs.attackDamage;
-	std::cout << "ClapTrap " << name << " called operator overloader" << std::endl;
+	std::cout << "ClapTrap " << this->name << " called operator overloader" << std::endl;
 	return *this;
 }
 ClapTrap::~ClapTrap()
