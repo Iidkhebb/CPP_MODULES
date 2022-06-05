@@ -2,7 +2,9 @@
 
 int main()
 {
-	DiamondTrap trap("bobiz");
-	trap.beRepaired(2);
+	DiamondTrap monster("Monster");
+	monster.beRepaired(2);
+	monster.ScavTrap::attack("enemy");
+	monster.whoAmI();
 	return 0;
 }

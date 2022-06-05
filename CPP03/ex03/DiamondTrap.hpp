@@ -18,7 +18,6 @@ public:
 	DiamondTrap(DiamondTrap const &src);
 	DiamondTrap &operator=(DiamondTrap const &rhs);
 	~DiamondTrap();
-
 	void whoAmI();
 };
 

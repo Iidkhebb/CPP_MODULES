@@ -12,7 +12,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(str name)
 {
-	std::cout << "ClapTrap Called overloaded constructor." << std::endl;
+	std::cout << "ClapTrap: Called overloaded constructor." << std::endl;
 	this->name = name;
 	this->hitPoints = 10;
 	this->energyPoints = 10;
@@ -22,7 +22,7 @@ ClapTrap::ClapTrap(str name)
 ClapTrap::ClapTrap(ClapTrap const & src)
 {
 	*this = src;
-	std::cout << "ClapTrap " << name << " called copy contructor" << std::endl;
+	std::cout << "ClapTrap: " << name << " called copy contructor" << std::endl;
 }
 
 ClapTrap & ClapTrap::operator=(ClapTrap const & rhs)
@@ -31,12 +31,12 @@ ClapTrap & ClapTrap::operator=(ClapTrap const & rhs)
 	this->hitPoints = rhs.hitPoints;
 	this->energyPoints = rhs.energyPoints;
 	this->attackDamage = rhs.attackDamage;
-	std::cout << "ClapTrap " << name << " called operator overloader" << std::endl;
+	std::cout << "ClapTrap: " << name << " called operator overloader" << std::endl;
 	return *this;
 }
 ClapTrap::~ClapTrap()
 {
-	std::cout << "ClapTrap " << name << " is destroyed" << std::endl;
+	std::cout << "ClapTrap: " << name << " called destructor." << std::endl;
 }
 // --- Canonical Form ---
 

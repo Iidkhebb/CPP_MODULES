@@ -23,7 +23,7 @@ DiamondTrap::DiamondTrap(DiamondTrap const &src)
 	std::cout << "ClapTrap " << this->name << " called copy contructor" << std::endl;
 }
 
-DiamondTrap &operator=(DiamondTrap const &rhs)
+DiamondTrap &DiamondTrap::operator=(DiamondTrap const &rhs)
 {
 	this->name = rhs.name;
 	this->hitPoints = rhs.hitPoints;
@@ -40,5 +40,6 @@ DiamondTrap::~DiamondTrap()
 
 void DiamondTrap::whoAmI()
 {
-
+	std::cout << "DiamondTrap name is " << this->name << " and ";
+	std::cout << " ClapTrap name is " << ClapTrap::name << "." << std::endl;
 }
