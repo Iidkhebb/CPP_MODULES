@@ -20,6 +20,16 @@ ScavTrap::ScavTrap(str name)
 	this->attackDamage = 20;
 }
 
+ScavTrap & ScavTrap::operator=(ScavTrap const & rhs)
+{
+	this->name = rhs.name;
+	this->hitPoints = rhs.hitPoints;
+	this->energyPoints = rhs.energyPoints;
+	this->attackDamage = rhs.attackDamage;
+	std::cout << "ScavTrap : " << this->name << " called operator overloader" << std::endl;
+	return *this;
+}
+
 ScavTrap::ScavTrap( const ScavTrap & src ) {
 	std::cout << "ScavTrap: Copy constructor called" << std::endl;
 	*this = src;
