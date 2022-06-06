@@ -4,6 +4,7 @@ Dog::Dog()
 {
     std::cout << "Dog : Default constructor called" << std::endl;
     this->type = "Dog";
+    this->brain = new Brain();
 }
 
 Dog::Dog(const Dog &src)
@@ -17,11 +18,14 @@ Dog &Dog::operator=(const Dog &rhs)
     if (this != &rhs)
     {
         this->type = rhs.type;
+        this->brain = new Brain(*rhs.brain);
     }
     return *this;
 }
+
 Dog::~Dog()
 {
+    delete this->brain;
     std::cout << "Dog : Destructor called" << std::endl;
 }
 void Dog::makeSound() const
