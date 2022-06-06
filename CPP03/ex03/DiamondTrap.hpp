@@ -19,5 +19,6 @@ public:
 	DiamondTrap &operator=(DiamondTrap const &rhs);
 	~DiamondTrap();
 	void whoAmI();
+	using ScavTrap::attack;
 };
 
