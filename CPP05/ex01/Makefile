@@ -2,7 +2,7 @@ NAME = main
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 CC = c++
 
-SRCS = main.cpp Fixed.cpp Point.cpp bsp.cpp
+SRCS = main.cpp Bureaucrat.cpp Form.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

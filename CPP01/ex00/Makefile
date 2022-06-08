@@ -1,13 +1,13 @@
 NAME = main
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 CC = c++
-
+INC = Zombie.hpp
 SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(INC)
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	@echo "\x1B[34mcompiling Project...\x1B[33m"
 

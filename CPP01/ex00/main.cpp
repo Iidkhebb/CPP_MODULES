@@ -5,10 +5,10 @@
 
 int main()
 {
-    Zombie *obj = newZombie("Foo");
-    obj->announce();
+    Zombie *obj = newZombie("Foo"); // <- on Heap
+    obj->announce(); 
     delete obj;
 
-    randomChump("Foo2");
+    randomChump("Foo2"); // <- on Stack 
     return 0;
 }

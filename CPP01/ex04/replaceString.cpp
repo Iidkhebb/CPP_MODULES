@@ -19,7 +19,7 @@ str ReplaceString::replace_string(str s1, str s2)
 		{
 			result += this->_base.substr(0, pos);
 			result += s2;
-			this->_base = this->_base.substr(pos + s1.size());
+			this->_base = this->_base.substr(pos + s1.length(), this->_base.length());
 			pos = 0;
 		}
 	}

@@ -27,14 +27,16 @@ void Harl::error( void )
 
 void Harl::complain(str level)
 {
-    typedef void(Harl::*members_function_type)(void);
-    members_function_type members_function_pointers_array[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    
+    typedef void (Harl::*array_of_pointers) (void);
+    array_of_pointers array[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     str know_Levels[4] = {"debug", "info", "warning", "error"};
+
     for (int i = 0; i < 4; i++)
     {
         if (level == know_Levels[i])
         {
-            (this->*members_function_pointers_array[i])();
+            (this->*array[i])();
             break;
         }
     }

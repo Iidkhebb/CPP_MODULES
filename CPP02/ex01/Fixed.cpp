@@ -15,14 +15,13 @@ Fixed::Fixed(Fixed const &src)
 
 Fixed::Fixed(const int value)
 {
-
     this->value = value << this->bits;
     std::cout << "Int constructor called" << std::endl;
 }
 
 Fixed::Fixed(const float value)
 {
-    this->value = roundf(value * 256);
+    this->value = roundf(value * 256); // <- x = floating_input * 2^(fractional_bits)
     std::cout << "Float constructor called" << std::endl;
 }
 

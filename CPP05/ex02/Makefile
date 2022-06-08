@@ -1,13 +1,13 @@
 NAME = main
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 CC = c++
-INC = replaceString.hpp
-SRCS = main.cpp replaceString.cpp
+
+SRCS = main.cpp Bureaucrat.cpp Form.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS) $(INC)
+$(NAME): $(OBJS)
 	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	@echo "\x1B[34mcompiling Project...\x1B[33m"
 
