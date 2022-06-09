@@ -7,18 +7,18 @@ Form::Form():name("any_Form_name"), isSinged(false), gradeSign(0), gradeExec(0)
 Form::Form(str name, int gradeSign, int gradeExec):name(name), isSinged(false), gradeSign(gradeSign), gradeExec(gradeExec)
 {
     if (gradeSign < 1 || gradeExec < 1)
-        throw "GradeTooLowException";
+        throw Form::GradeTooLowException();
     else if (gradeSign > 150 || gradeExec > 150)
-        throw "GradeTooHighException";
+        throw Form::GradeTooHighException();
     this->isSinged = false;
 }
 
 Form &Form::operator=(Form const &rhs)
 {
     if (gradeSign < 1 || gradeExec < 1)
-        throw "GradeTooLowException";
+        throw Form::GradeTooLowException();
     else if (gradeSign > 150 || gradeExec > 150)
-        throw "GradeTooHighException";
+        throw Form::GradeTooHighException();
     this->isSinged = rhs.isSinged;
     return *this;
 }
@@ -34,11 +34,21 @@ Form::~Form()
 
 }
 
+const char *Form::GradeTooHighException::what() const throw()
+{
+    return ("Form : Grade is too high");
+}
+
+const char *Form::GradeTooLowException::what() const throw()
+{
+    return ("Form : Grade is too low");
+}
+
 void Form::beSigned(Bureaucrat &src)
 {
     if (src.getGrade() > this->gradeSign)
     {
-        throw "GradeTooLowException";
+        throw Form::GradeTooLowException();
     }
     
     this->isSinged = true;
