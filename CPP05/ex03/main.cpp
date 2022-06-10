@@ -35,6 +35,7 @@ int main()
         
         alice.incrementGrade();// Grade is 146
         alice.signForm(*SCF_Form);
+        delete SCF_Form;
     }
     catch( std::exception& e)
     {
@@ -69,6 +70,7 @@ int main()
         alice.incrementGrade();// Grade is 72
         alice.signForm(*RRF_Form);
         alice.executeForm(*RRF_Form); // <-- throws an exception because grade 72 is not high enough 45 is required
+        delete RRF_Form;
     }
     catch( std::exception& e)
     {
@@ -104,7 +106,7 @@ int main()
         alice.incrementGrade();// Grade is 5
         alice.signForm(*PPF_Form);
         alice.executeForm(*PPF_Form); // <-- Sucessfully executes the form by Alice
-
+        delete PPF_Form;
     }
     catch( std::exception& e)
     {
@@ -115,7 +117,7 @@ int main()
     std::cout << "\n************************ NON EXESTING FORM *************************\n" << std::endl;
     try
     {
-        Form *PPF_Form = intern.makeForm("NON FORM", "NONE"); // <-- throws an exception because the form does not exist
+        Form *None_Form = intern.makeForm("NON FORM", "NONE"); // <-- throws an exception because the form does not exist
         
         // PROGRAM WILL NOT REACH HERE
 
@@ -124,30 +126,33 @@ int main()
         
         std::cout << "--------------- Sign the Form --------------" << std::endl;
         
-        mark.signForm(*PPF_Form);
-        alice.signForm(*PPF_Form);
+        mark.signForm(*None_Form);
+        alice.signForm(*None_Form);
 
         std::cout << "\n--------------- Execute the Form --------------" << std::endl;
         
-        mark.executeForm(*PPF_Form);
-        alice.executeForm(*PPF_Form);
+        mark.executeForm(*None_Form);
+        alice.executeForm(*None_Form);
 
         std::cout << "\n------------------ Let's try to decrementGrade the grade ------------" << std::endl;
         
         alice.decrementGrade();// Grade is 8
-        alice.signForm(*PPF_Form);
+        alice.signForm(*None_Form);
      
         std::cout << "\n------------------ Let's try to incrementGrade the grade ------------" << std::endl;
         
         alice.incrementGrade();
         alice.incrementGrade();
         alice.incrementGrade();
-        alice.signForm(*PPF_Form);
-        alice.executeForm(*PPF_Form);
+        alice.signForm(*None_Form);
+        alice.executeForm(*None_Form);
+        delete None_Form;
     }
     catch( std::exception& e)
     {
         std::cout << e.what() << std::endl;
     }
+
+    system("leaks main");
     return 0;
 };

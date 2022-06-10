@@ -17,6 +17,8 @@ class Intern
         Intern(Intern const &src);
         Intern &operator=(Intern const &rhs);
         ~Intern();
+        
+        
         class FormNotFoundException : public std::exception
         {
             public:
@@ -24,7 +26,11 @@ class Intern
                 virtual const char *what() const throw();
         };
         Form *makeForm(std::string name, std::string target);
+    
     private:
-        Form *_ptr_form;
+        Form *RobotomyRequest(const str &target) const;
+        Form *PresidentialPardon(const str &target) const;
+        Form *ShrubberyCreation(const str &target) const;
+        
 };
 
