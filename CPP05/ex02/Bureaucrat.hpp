@@ -25,12 +25,12 @@ class Bureaucrat
             public:
                 const char *what() const throw();
         };
-        int getGrade(void);
-        str getName(void);
+        int getGrade(void) const;
+        str getName(void) const;
         void setGrade(int value);
         void incrementGrade(void);
         void decrementGrade(void);
-        
+        void executeForm(Form const & form);
         void signForm(Form &form);
     private:
         const str name;

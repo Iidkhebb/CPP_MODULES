@@ -34,6 +34,24 @@ Form::~Form()
 
 }
 
+void Form::execute(Bureaucrat const & executor) const
+{
+    if (this->getIsSinged() == false)
+        throw Form::NotSignedException();
+    else if (executor.getGrade() > this->getGradeExec())
+        throw Form::GradeTooLowException();
+    else
+    {
+        this->action();
+        std::cout << "Form : " << this->getName() << " executed by " << executor.getName() << std::endl;
+    }
+}
+
+const char *Form::NotSignedException::what() const throw()
+{
+    return ("Form : Not Signed Exception");
+}
+
 const char *Form::GradeTooHighException::what() const throw()
 {
     return ("Form : Grade is too high");
@@ -54,22 +72,22 @@ void Form::beSigned(Bureaucrat &src)
     this->isSinged = true;
 }
 
-str Form::getName(void)
+str Form::getName(void) const
 {
     return this->name;
 }
 
-int Form::getIsSinged(void)
+int Form::getIsSinged(void) const
 {
     return this->isSinged;
 }
 
-int Form::getGradeSign(void)
+int Form::getGradeSign(void) const
 {
     return this->gradeSign;
 }
 
-int Form::getGradeExec(void)
+int Form::getGradeExec(void) const
 {
     return this->gradeExec;
 }

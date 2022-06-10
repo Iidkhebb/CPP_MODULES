@@ -19,7 +19,16 @@ class Form
         Form(str name, int gradeSign, int gradeExec);
         Form(Form const &src);
         Form &operator=(Form const &rhs);
-        ~Form();
+        virtual ~Form();
+        virtual void action(void) const = 0;
+        
+        void execute(Bureaucrat const & executor) const;
+
+        class NotSignedException :  public std::exception
+        {
+            public:
+                const char *what() const throw();
+        };
         class GradeTooLowException :  public std::exception
         {
             public:
@@ -30,10 +39,11 @@ class Form
             public:
                 const char *what() const throw();
         };
-        str getName(void);
-        int getIsSinged();
-        int getGradeSign();
-        int getGradeExec();
+
+        str getName(void) const;
+        int getIsSinged() const;
+        int getGradeSign()const;
+        int getGradeExec()const;
 
         void beSigned(Bureaucrat &src);
         

@@ -30,12 +30,12 @@ Bureaucrat::~Bureaucrat()
 }
 
 
-int Bureaucrat::getGrade(void)
+int Bureaucrat::getGrade(void) const
 {
     return this->grade;
 }
 
-str Bureaucrat::getName(void)
+str Bureaucrat::getName(void) const
 {
     return this->name;
 }
@@ -75,6 +75,20 @@ void Bureaucrat::setGrade(int value)
         std::cout << e.what() << std::endl;
     }
 }
+
+void Bureaucrat::executeForm(Form const & form)
+{
+    try
+    {
+        form.execute(*this);
+    }
+    catch(std::exception& e)
+    {
+        std::cout << this->getName() << " couldn't excecute " << form.getName() << " because of " << e.what() << std::endl;
+    }
+    
+}
+
 void Bureaucrat::signForm(Form &form)
 {
     try
