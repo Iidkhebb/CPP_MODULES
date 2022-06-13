@@ -1,7 +1,7 @@
 NAME = main
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 CC = c++
-INC = iter.hpp
+INC = Array.hpp Array.tpp
 SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
