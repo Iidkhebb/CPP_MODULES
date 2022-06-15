@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <stack>
+#include <list>
 
 template <typename T>
 #define STACK std::stack<T>
