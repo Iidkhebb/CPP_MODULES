@@ -37,7 +37,6 @@ int Span::shortestSpan(void)
     if(this->container.size() < 2)
         throw Span::EmptySpanException();
     
-    // search for lowest distance between two elements in the container using iterartor
     typedef std::vector<int>::iterator it;
     it it1 = this->container.begin();
     it it2 = this->container.begin() + 1;
@@ -58,7 +57,6 @@ int Span::longestSpan(void)
     if(this->container.size() < 2)
         throw Span::EmptySpanException();
     
-    // search for highest distance between two elements in the container
     typedef std::vector<int>::iterator it;
     it it1 = this->container.begin();
     it it2 = this->container.begin() + 1;
