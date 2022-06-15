@@ -1,6 +1,5 @@
 #pragma once
 
-#include <vector>
 #include <algorithm>
 #include <iostream>
 #include <string>
@@ -10,40 +9,23 @@ template <typename T>
 class MutantStack : public std::stack<T>
 {
 public:
+    typedef std::stack<T> sk;
+    typedef typename sk::container_type::iterator iterator;
     MutantStack() {};
-    ~MutantStack() 
+    MutantStack(const MutantStack &other) : sk(other) {};
+    MutantStack &operator=(const MutantStack &src)
     {
-        this->_stack.clear();
-    };
-    MutantStack(const MutantStack &src)
-    {
-        this->_stack = src._stack;
-    };
-    MutantStack &operator=(const MutantStack &)
-    {
-        this->_stack = other._stack;
+        if (this != &src)
+            this->c = src->c;
         return (*this);
     };
-    void push(T)
-    {
-        this->_stack.push_back(value);
+    iterator begin() 
+    { 
+        return (this->c.begin()); 
     };
-    T pop()
-    {
-        T value = this->_stack.back();
-        this->_stack.pop_back();
-        return (value);
-    };
-    T top()
-    {
-        return (this->_stack.back());
-    };
-    size_t size()
-    {
-        return (this->_stack.size());
+    iterator end() 
+    { 
+        return (this->c.end()); 
     };
 
-    
-private:
-    std::vector<T> _stack;
 }; 
