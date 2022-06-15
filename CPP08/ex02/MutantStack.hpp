@@ -6,13 +6,13 @@
 #include <stack>
 
 template <typename T>
+#define STACK std::stack<T>
 class MutantStack : public std::stack<T>
 {
 public:
-    typedef std::stack<T> sk;
-    typedef typename sk::container_type::iterator iterator;
+    typedef typename STACK::container_type::iterator iterator;
     MutantStack() {};
-    MutantStack(const MutantStack &other) : sk(other) {};
+    MutantStack(const MutantStack &other) : STACK(other) {};
     MutantStack &operator=(const MutantStack &src)
     {
         if (this != &src)
